@@ -232,7 +232,7 @@ a {
 
 .foot i {
   margin: 0 10px;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 /* netlify hide security */
@@ -392,6 +392,10 @@ a {
   .showcase-form {
     animation: slideInFromBottom 1s ease-in;
   }
+  .foot i {
+    font-size: 20px;
+    margin: 3px;
+  }
 }
 
 /* Phone  */
@@ -408,6 +412,7 @@ a {
     background-color: rgba(0, 0, 0, 0.1);
     overflow: visible;
   }
+
   /* .navbar li:hover {
     border-bottom: 2px solid white;
   } */

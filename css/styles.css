@@ -68,7 +68,7 @@ img {
   position: relative;
 }
 .showcase .grid {
-  grid-template-columns: 55% 45%;
+  /* grid-template-columns: 55% 45%; */
   gap: 30px;
   overflow: visible;
 }
@@ -76,15 +76,22 @@ img {
 .showcase h1 {
   font-size: 40px;
 }
-
+.showcase-form h2 {
+  font-weight: normal;
+  color: #333;
+}
+.showcase .card {
+  padding: 40px;
+}
 .showcase-form {
   position: relative;
   top: 60px;
-  height: 350px;
-  width: 400px;
+  height: 330px;
+  width: 360px;
   padding: 40px;
   z-index: 1;
   justify-self: flex-end;
+  animation: slideInFromRight 1s ease-in;
 }
 
 .showcase-form .form-control {
@@ -116,9 +123,14 @@ img {
   transform: skewY(-3deg);
 }
 
+.showcase-text {
+  animation: slideInFromLeft 1s ease-in;
+}
+
 /* stats */
 .stats {
   padding-top: 100px;
+  animation: slideInFromBottom 1s ease-in;
 }
 /* .stats-heading {
   max-width: 500px;
@@ -230,9 +242,10 @@ a {
 }
 /* Utilities */
 .container {
+  /* height: auto; */
   max-width: 1100px;
   margin: 0 auto;
-  overflow: auto; /*-- ? */
+  /* overflow: visible; */
   padding: 0 40px;
 }
 
@@ -314,4 +327,88 @@ a {
 
 .btn:hover {
   transform: scale(0.98);
+}
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 833px) {
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .showcase {
+    height: auto;
+  }
+  .showcase-text {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .showcase-form {
+    justify-self: center;
+    animation: slideInFromBottom 1s ease-in;
+  }
+  .cli .grid *:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .showcase-text {
+    animation: slideInFromTop 1s ease-in;
+  }
+  .showcase-form {
+    animation: slideInFromBottom 1s ease-in;
+  }
+}
+
+/* Phone  */
+
+@media (max-width: 500px) {
+  .navbar {
+    height: 110px;
+  }
+  .navbar .flex {
+    flex-direction: column;
+  }
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    overflow: visible;
+  }
+  /* .navbar li:hover {
+    border-bottom: 2px solid white;
+  } */
 }
